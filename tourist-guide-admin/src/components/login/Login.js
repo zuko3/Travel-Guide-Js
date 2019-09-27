@@ -55,7 +55,7 @@ export const Login = connect(mapStateToProps, mapDispatchToProps)(class extends 
                     }} validationSchema={loginSchema} onSubmit={this._handleSubmit} size='large'>
                         {({ isSubmitting }) => (<React.Fragment>
                             <Input inputProps={{ placeholder: 'E-mail address', icon: 'envelope', disabled: isSubmitting, iconPosition: 'left' }} name="email" label='Email Address' type="email" />
-                            <Input inputProps={{ placeholder: 'Password', icon: 'lock', disabled: isSubmitting, iconPosition: 'left' }} name="password" label='Password' type='password' />
+                            <Input inputProps={{ placeholder: 'Password', icon: 'lock', disabled: isSubmitting, iconPosition: 'left', type: 'password' }} name="password" label='Password' type='password' />
                             <Form.Checkbox label='I agree to the Terms and Conditions' />
                             <Button.Submit disabled={isSubmitting} loading={isSubmitting} secondary fluid size='large'>Login</Button.Submit>
                         </React.Fragment>)}
