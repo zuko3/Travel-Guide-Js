@@ -57,3 +57,17 @@ exports.updatePlaceController = function (req, res, next) {
     }).catch(err => res.status(500).json(err))
 
 }
+
+exports.getPlaceById = function (req, res, next) {
+    const id = req.params.id;
+    console.log(id);
+    Place.find({ _id: id }).then(([place]) => {
+        if (!place) {
+            return res.status(404).json({
+                message: 'No place found'
+            });
+        }
+        return res.status(200).json(place);
+    }).catch(err => res.status(500).json(err))
+
+}
