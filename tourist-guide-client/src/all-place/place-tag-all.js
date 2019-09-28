@@ -35,7 +35,9 @@ export function PlaceTagsAll(props) {
     if (isLoading) {
         return (
             <React.Fragment>
-                <h3>Showing all results for Tag:&nbsp;<span className="w3-tag w3-light-grey">{tag}</span></h3>
+                <div className="w3-margin">
+                    <h4>Showing all results for Tag:&nbsp;<span className="w3-tag">{tag}</span></h4>
+                </div>
                 <Loader />
             </React.Fragment>
         )
@@ -43,14 +45,18 @@ export function PlaceTagsAll(props) {
     else if (isError) {
         return (
             <React.Fragment>
-                <h3>Showing all results for Tag:&nbsp;<span className="w3-tag w3-light-grey">{tag}</span></h3>
+                <div className="w3-margin">
+                    <h4>Showing all results for Tag:&nbsp;<span className="w3-tag">{tag}</span></h4>
+                </div>
                 <Error />
             </React.Fragment>
         )
     } else if (place.length === 0) {
         return (
             <React.Fragment>
-                <h3>Showing all results for Tag:&nbsp;<span className="w3-tag w3-light-grey">{tag}</span></h3>
+                <div className="w3-margin">
+                    <h4>Showing all results for Tag:&nbsp;<span className="w3-tag">{tag}</span></h4>
+                </div>
                 <None />
             </React.Fragment>
         )
@@ -58,7 +64,9 @@ export function PlaceTagsAll(props) {
 
         return (
             <React.Fragment>
-                <h3>Showing all results for Tag:&nbsp;<span className="w3-tag w3-light-grey">{tag}</span></h3>
+                <div className="w3-margin">
+                    <h4>Showing all results for Tag:&nbsp;<span className="w3-tag">{tag}</span></h4>
+                </div>
                 {place.map((p, index) => <PlaceCard place={p} key={index} />)}
             </React.Fragment>
         )
