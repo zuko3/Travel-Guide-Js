@@ -16,6 +16,7 @@ router.get("/all-place", placeController.getAllPlaces);
 router.post("/delete-place", placeController.deletePlacesController);
 router.post("/update-place", placeController.updatePlaceController);
 router.get("/place/:id", placeController.getPlaceById);
+router.get("/alltagsplace/:tag", placeController.getPlacesByTag);
 
 router.post("/add-tags", tagController.addTags);
 router.get("/tags", tagController.getTags);

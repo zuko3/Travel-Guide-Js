@@ -72,3 +72,14 @@ exports.getPlaceById = function (req, res, next) {
     })
 
 }
+
+exports.getPlacesByTag = function (req, res, next) {
+    const { tag } = req.params;
+    Place.find().then(places => {
+        const filterdPlaces = places.filter(place => {
+            const { tags } = place;
+            return tags.includes(tag);
+        })
+        return res.status(200).json({ places: filterdPlaces })
+    }).catch(error => res.status(500).json(error));
+}
