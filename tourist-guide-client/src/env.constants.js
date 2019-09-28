@@ -3,9 +3,9 @@ export const envConstants = {
 };
 
 export const apiUrls = {
-    ALL_PLACES: '/admin/all-place',
-    TAGS_URL: '/admin/tags',
-    PLACE_DETAILS: '/admin/place/',
-    PLACE_TAGS_ALL: '/admin/alltagsplace/',
+    ALL_PLACES: '/place/all-place',
+    TAGS_URL: '/place/tags',
+    PLACE_DETAILS: '/place/place/',
+    PLACE_TAGS_ALL: '/place/alltagsplace/',
     PLACE_POPULAR: '/place/popular/'
 }
