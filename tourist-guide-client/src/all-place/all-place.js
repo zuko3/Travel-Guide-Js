@@ -1,7 +1,7 @@
 import React from "react";
 import { envConstants, apiUrls } from "../env.constants";
 import { Loader, Error, None } from "../common";
-import { PlaceCard } from "../place-card."
+import { PlaceCard } from "../place-card"
 
 export class AllPlaces extends React.Component {
     constructor(props) {
