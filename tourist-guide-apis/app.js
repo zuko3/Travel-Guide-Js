@@ -6,6 +6,7 @@ const multer = require('multer');
 const app = express();
 const path = require('path');
 const adminRoutes = require("./routes/admin");
+const placeRoutes = require("./routes/place");
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -41,6 +42,7 @@ app.use(function (req, res, next) {
 });
 
 app.use("/admin", adminRoutes);
+app.use("/place", placeRoutes)
 
 
 

@@ -83,3 +83,20 @@ exports.getPlacesByTag = function (req, res, next) {
         return res.status(200).json({ places: filterdPlaces })
     }).catch(error => res.status(500).json(error));
 }
+
+exports.getPopularPlace = function (req, res, next) {
+    Place.find().then(places => {
+        let popularPlace = [];
+        if (places.length > 5) {
+            for (let i = 0; i < 5; i++) {
+                popularPlace.push(places[Math.floor(Math.random() * places.length)])
+            }
+        }
+        else {
+            for (let i = 0; i < places.length; i++) {
+                popularPlace.push(places[Math.floor(Math.random() * places.length)])
+            }
+        }
+        return res.status(200).json({ places: popularPlace })
+    }).catch(error => res.status(500).json(error));
+}
