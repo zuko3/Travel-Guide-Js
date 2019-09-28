@@ -41,7 +41,6 @@ export function PlaceDetails(props) {
     } else if (!place) {
         return <None />
     } else {
-        console.log(place)
         return (
             <div className="w3-card-4 w3-margin w3-white">
                 <img src={`${envConstants.BASE_URL}/${place.images[0].imgpath}`} alt="Nature" style={{ width: "100%", height: '300px' }} />
