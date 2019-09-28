@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { envConstants, apiUrls } from "../env.constants";
 import { Loader, Error, None } from "../common";
+import { Link } from 'react-router-dom';
 
 export function Tags() {
     const [isLoading, setIsLoading] = useState(false);
@@ -70,7 +71,9 @@ export function Tags() {
                 </div>
                 <div className="w3-container w3-white">
                     <p>
-                        {tags.map((tag, index) => <span key={index} style={{ marginRight: '3px' }} className="w3-tag w3-light-grey w3-small w3-margin-bottom">{tag.tag}</span>)}
+                        {tags.map((tag, index) => <span key={index} style={{ marginRight: '3px' }} className="w3-tag w3-light-grey w3-small w3-margin-bottom">
+                            <Link to={`/tags/${tag.tag}`}>{tag.tag}</Link>
+                        </span>)}
                     </p>
 
                 </div>

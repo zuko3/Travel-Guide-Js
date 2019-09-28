@@ -5,5 +5,6 @@ export const envConstants = {
 export const apiUrls = {
     ALL_PLACES: '/admin/all-place',
     TAGS_URL: '/admin/tags',
-    PLACE_DETAILS: '/admin/place/'
+    PLACE_DETAILS: '/admin/place/',
+    PLACE_TAGS_ALL: '/admin/alltagsplace/'
 }
