@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppRoutes, history, ProfileContainer } from "./common"
 import { Header, Tags, PopularPost, AuthForm } from "./common"
-import { Router } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import { connect } from "react-redux";
 
 const mapDispatchToProps = (dispatch) => {
@@ -27,7 +27,7 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
   return (
     <Router history={history}>
       <div className="w3-content" style={{ maxWidth: "1400px" }}>
-        <Header />
+        <Route render={() => <Header authData={authData} />} />
         <div className="w3-row">
           <div className="w3-col l8 s12">
             <AppRoutes authData={authData} />
