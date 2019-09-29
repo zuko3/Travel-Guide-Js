@@ -32,14 +32,41 @@ export function PopularPost(props) {
     }, []);
 
     if (isLoading) {
-        return <Loader />
+        return (
+            <div className="w3-card w3-margin">
+                <div className="w3-container w3-padding" style={{ backgroundColor: '#f1f1f1' }}>
+                    <h4>Popular Place</h4>
+                </div>
+                <div className="w3-container w3-white">
+                    <Loader />
+                </div>
+            </div>
+        )
     }
     else if (isError) {
-        return <Error />
+        return (
+            <div className="w3-card w3-margin">
+                <div className="w3-container w3-padding" style={{ backgroundColor: '#f1f1f1' }}>
+                    <h4>Popular Place</h4>
+                </div>
+                <div className="w3-container w3-white">
+                    <Error />
+                </div>
+            </div>
+        )
 
 
     } else if (place.length === 0) {
-        return <None />
+        return (
+            <div className="w3-card w3-margin">
+                <div className="w3-container w3-padding" style={{ backgroundColor: '#f1f1f1' }}>
+                    <h4>Popular Place</h4>
+                </div>
+                <div className="w3-container w3-white">
+                    <None />
+                </div>
+            </div>
+        )
 
     } else {
 
@@ -51,7 +78,7 @@ export function PopularPost(props) {
                 <ul className="w3-ul w3-hoverable w3-white">
                     {place.map((p, index) => (
                         <li onClick={() => history.push(`/details/${p._id}`)} key={index} className="w3-padding-16" style={{ curosr: "pointer" }}>
-                            <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="popularpost" className="w3-left w3-margin-right" style={{ width: "50px" }} />
+                            <img src={`${envConstants.BASE_URL}/${p.images[0].imgpath}`} alt="popularpost" className="w3-left w3-margin-right" style={{ width: "50px" }} />
                             <span className="w3-large">{p.name}</span><br />
                             <span>{p.areas}</span>
                         </li>
