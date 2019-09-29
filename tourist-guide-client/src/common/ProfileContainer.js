@@ -1,9 +1,13 @@
 import React from "react";
-import { history } from "../common"
+import { history } from "../common";
 
 function doLogout(func) {
     typeof func === "function" && func();
     history.push("/");
+}
+
+function showPreference() {
+    history.push("/home");
 }
 
 export function ProfileContainer(props) {
@@ -13,6 +17,8 @@ export function ProfileContainer(props) {
         <div className="w3-card w3-margin">
             <div className="w3-container w3-padding" style={{ backgroundColor: '#f1f1f1' }}>
                 <h4>Profile Information</h4>
+                <span className="w3-tag" onClick={showPreference} style={{ cursor: 'pointer' }}>My Preferences</span>
+                &nbsp;&nbsp;
                 <span className="w3-tag" style={{ cursor: 'pointer' }}>Edit Profile</span>
                 &nbsp;&nbsp;
                 <span className="w3-tag" onClick={() => doLogout(setLogout)} style={{ cursor: 'pointer' }}>Logout</span>
