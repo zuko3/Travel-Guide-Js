@@ -10,4 +10,5 @@ export * from "./map-view";
 export * from "./AuthForm";
 export * from "./schema";
 export * from "./store";
-export * from "./ProfileContainer"
+export * from "./ProfileContainer";
+export * from "./Footer";

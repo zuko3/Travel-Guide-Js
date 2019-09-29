@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppRoutes, history, ProfileContainer } from "./common"
-import { Header, Tags, PopularPost, AuthForm } from "./common"
+import { Header, Tags, PopularPost, AuthForm, Footer } from "./common"
 import { Router, Route } from 'react-router-dom';
 import { connect } from "react-redux";
 
@@ -39,6 +39,7 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
           </div>
         </div>
       </div>
+      <Footer />
     </Router>
 
   );
