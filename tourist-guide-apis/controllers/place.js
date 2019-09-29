@@ -100,3 +100,14 @@ exports.getPopularPlace = function (req, res, next) {
         return res.status(200).json({ places: popularPlace })
     }).catch(error => res.status(500).json(error));
 }
+
+exports.getPlacesByPrefrence = function (req, res, next) {
+    const tagPrefrences = req.query ? (req.query.tag || []) : [];
+    Place.find().then(places => {
+        const preferdLocation = places.filter(place => {
+            const tags = place.tags;
+            return tags.some(tag => tagPrefrences.includes(tag))
+        })
+        return res.status(200).json({ places: preferdLocation })
+    }).catch(error => res.status(500).json(error));
+}

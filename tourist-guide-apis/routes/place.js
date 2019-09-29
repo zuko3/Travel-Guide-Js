@@ -8,5 +8,6 @@ router.get("/tags", tagController.getTags);
 router.get("/popular", placeController.getPopularPlace);
 router.get("/place/:id", placeController.getPlaceById);
 router.get("/alltagsplace/:tag", placeController.getPlacesByTag);
+router.get("/prefrence", placeController.getPlacesByPrefrence);
 
 module.exports = router;
