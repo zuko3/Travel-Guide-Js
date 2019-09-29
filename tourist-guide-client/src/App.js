@@ -11,6 +11,9 @@ const mapDispatchToProps = (dispatch) => {
         type: 'LOGIN_SUCCESS',
         payload
       })
+    },
+    setLogout: () => {
+      dispatch({ type: 'LOGOUT_SUCCESS' })
     }
   }
 }
@@ -20,7 +23,7 @@ function mapStateToProps(state) {
 }
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(function (props) {
-  const { authData, setLoginData } = props;
+  const { authData, setLoginData, setLogout } = props;
   return (
     <Router history={history}>
       <div className="w3-content" style={{ maxWidth: "1400px" }}>
@@ -30,7 +33,7 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
             <AppRoutes />
           </div>
           <div className="w3-col l4">
-            {authData ? <ProfileContainer authData={authData} /> : <AuthForm setLoginData={setLoginData} />}
+            {authData ? <ProfileContainer authData={authData} setLogout={setLogout} /> : <AuthForm setLoginData={setLoginData} />}
             <Tags />
             <PopularPost />
           </div>
