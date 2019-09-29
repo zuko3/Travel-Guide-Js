@@ -7,5 +7,6 @@ export const apiUrls = {
     TAGS_URL: '/place/tags',
     PLACE_DETAILS: '/place/place/',
     PLACE_TAGS_ALL: '/place/alltagsplace/',
-    PLACE_POPULAR: '/place/popular/'
+    PLACE_POPULAR: '/place/popular/',
+    LOGIN: '/user/login'
 }

@@ -85,6 +85,59 @@ exports.updateAdmin = (req, res, next) => {
   })
 }
 
+
+
+exports.doUserLogin = (req, res, next) => {
+  users
+    .find({ email: req.body.email })
+    .exec()
+    .then(([result]) => {
+      if (!result) {
+        return res.status(401).json({
+          message: "Unauthorized user"
+        });
+      }
+      bcrypt.compare(
+        req.body.password,
+        result.password,
+        (err, success) => {
+          if (err) {
+            return res.status(401).json({
+              message: "Unauthorized user"
+            });
+          }
+          if (success) {
+            const token = jwt.sign(
+              {
+                email: result.email,
+                userId: result._id
+              },
+              JWT_KEY,
+              { expiresIn: "1h" }
+            );
+
+            res.status(200).json({
+              message: "Authentication Successfull",
+              token,
+              name: result.name,
+              id: result._id,
+              email: result.email,
+              tags: result.tags
+            });
+          } else {
+            res.status(401).json({
+              message: "Unauthorized user"
+            });
+          }
+        }
+      );
+    })
+    .catch(error => {
+      res.status(500).json(error);
+    });
+};
+
+
 exports.createUser = (req, res, next) => {
   users.find({ email: req.body.email }).exec()
     .then(userres => {
