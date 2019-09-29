@@ -9,7 +9,7 @@ import { adminActions, placeActions } from "../../actions";
 import { bindActionCreators } from "redux";
 import { addPlacesSchema } from "../../helper";
 import { placeService } from "../../services";
-import { LocationSearch, MapView } from "../common";
+import { LocationSearch } from "../common";
 
 function mapDispatchToProps(dispatch) {
     const { getAdminConfigs } = adminActions;
@@ -117,9 +117,6 @@ export const AddPlaces = connect(mapStateToProps, mapDispatchToProps)(class exte
                                     </React.Fragment>
                                 )}
                             </Form>
-                        </Grid.Column>
-                        <Grid.Column>
-                            {/* <MapView /> */}
                         </Grid.Column>
                     </React.Fragment>
                 ) : (

@@ -3,7 +3,7 @@ import { Segment } from 'semantic-ui-react';
 
 export class MapView extends React.Component {
     componentDidMount() {
-        const uluru = { lat: 12.9716, lng: 77.5946 };
+        const uluru = { lat: parseFloat(this.props.lat) || 12.9716, lng: parseFloat(this.props.lon) || 77.5946 };
         const map = new window.google.maps.Map(this.mapcontainer, { zoom: 10, center: uluru });
         new window.google.maps.Marker({ position: uluru, map: map });
     }

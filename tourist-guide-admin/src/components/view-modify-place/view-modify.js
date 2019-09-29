@@ -135,9 +135,6 @@ export const ViewModifyPlace = connect(mapStateToProps, mapDispatchToProps)(clas
                         )}
                     </Form>
                 </Grid.Column>
-                <Grid.Column>
-                    {/* <MapView /> */}
-                </Grid.Column>
             </Grid>
         )
     }
@@ -146,7 +143,7 @@ export const ViewModifyPlace = connect(mapStateToProps, mapDispatchToProps)(clas
     _renderPlaceView() {
         const {
             location: {
-                state: { place: { name = '', areas = '', lat = '', lon = '', tags = [], address = '', description = '', images = [] } }
+                state: { place: { name = '', areas = '', lat = '0', lon = '0', tags = [], address = '', description = '', images = [] } }
             }
         } = this.props;
         return (
@@ -158,7 +155,7 @@ export const ViewModifyPlace = connect(mapStateToProps, mapDispatchToProps)(clas
                         Edit palce
                     </Button>
                     <Header as="h1">Place Details View</Header>
-                    <MapView />
+                    <MapView lat={lat} lon={lon} />
                     <Header as="h2">{name}</Header>
                     <Item.Meta>
                         <div style={{ marginTop: '5px' }}><Icon name='map marker alternate' />&nbsp;{areas}</div>
