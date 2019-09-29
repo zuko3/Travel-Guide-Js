@@ -6,4 +6,8 @@ export * from "./PopularPost";
 export * from "./Header";
 export * from "./routes";
 export * from "./history";
-export * from "./map-view"
+export * from "./map-view";
+export * from "./AuthForm";
+export * from "./schema";
+export * from "./store";
+export * from "./ProfileContainer"
