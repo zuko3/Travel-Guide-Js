@@ -30,7 +30,7 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
         <Header />
         <div className="w3-row">
           <div className="w3-col l8 s12">
-            <AppRoutes />
+            <AppRoutes authData={authData} />
           </div>
           <div className="w3-col l4">
             {authData ? <ProfileContainer authData={authData} setLogout={setLogout} /> : <AuthForm setLoginData={setLoginData} />}
