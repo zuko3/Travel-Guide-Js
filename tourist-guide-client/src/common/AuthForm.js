@@ -11,9 +11,9 @@ export function AuthForm(props) {
             <div className="w3-container w3-padding" style={{ backgroundColor: '#f1f1f1' }}>
                 <h4>{login ? "Login" : "Register"}</h4>
             </div>
-            <div className="w3-container w3-white">
+            <div className="w3-container w3-white" style={{ padding: '1rem' }}>
                 {login ? <Login setLoginData={setLoginData} /> : <Register />}
-                &nbsp; &nbsp;<span style={{ cursor: 'pointer' }} onClick={() => setLogin(!login)}>
+                <span style={{ cursor: 'pointer' }} onClick={() => setLogin(!login)}>
                     <u>{login ? "Register" : "Login"}</u>
                 </span>
             </div>
@@ -73,7 +73,7 @@ function Login(props) {
 
 function Register() {
     return (
-        <React.Fragment>
+        <Form>
             <label><b>Name</b></label>
             <input className="w3-input w3-border" type="text" />
             <label><b>Email</b></label>
@@ -81,6 +81,6 @@ function Register() {
             <label ><b>Password</b></label>
             <input className="w3-input w3-border" type="password" />
             <button className="w3-btn w3-black" style={{ marginTop: '1rem', marginBottom: '1rem' }}>Register</button>
-        </React.Fragment>
+        </Form>
     )
 }
