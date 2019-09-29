@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from 'react-router-dom';
-import { AllPlaces, PlaceTagsAll } from "../all-place";
+import { AllPlaces, PlaceTagsAll, Home } from "../all-place";
 import { PlaceDetails } from "../place-details"
 
 
@@ -11,11 +11,6 @@ const ProtectedRoute = ({ component: Comp, authData, path, ...rest }) => {
         }} />
     );
 };
-
-const Home = props => {
-    console.log("home props:", props)
-    return <h1>Home</h1>
-}
 
 export function AppRoutes(props) {
     const { authData } = props;
