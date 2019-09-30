@@ -51,14 +51,13 @@ export function ProfileContainer(props) {
 }
 
 
-
+//For formating the tags.
 function formatEditProfileTag(tags) {
     return tags.map(tag => ({
         value: tag,
         label: tag
     }))
 }
-
 
 
 function EditProfile(props) {
@@ -86,8 +85,7 @@ function EditProfile(props) {
             }
         }).then(response => {
             formikApi.setSubmitting(false);
-            console.log(response);
-            setLoginData(response.user)
+            setLoginData(response.user);
             showPreference(setisProfileUpdate);
         }).catch(err => {
             formikApi.setErrors({

@@ -24,7 +24,8 @@ function mapStateToProps(state) {
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(function (props) {
   const { authData, setLoginData, setLogout } = props;
-  const [tags, setTags] = useState([])
+  const [tags, setTags] = useState([]);
+  const profileProps = { setLoginData, authData, tags, setLogout };
   return (
     <Router history={history}>
       <div className="w3-content" style={{ maxWidth: "1400px" }}>
@@ -34,7 +35,7 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
             <AppRoutes authData={authData} />
           </div>
           <div className="w3-col l4">
-            {authData ? <ProfileContainer setLoginData={setLoginData} authData={authData} tags={tags} setLogout={setLogout} /> : <AuthForm tags={tags} setLoginData={setLoginData} />}
+            {authData ? <ProfileContainer {...profileProps} /> : <AuthForm tags={tags} setLoginData={setLoginData} />}
             <Tags setListTags={setTags} />
             <PopularPost />
           </div>
