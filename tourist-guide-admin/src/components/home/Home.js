@@ -51,7 +51,7 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(class extends R
                                 <b>Manage Users</b>
                                 <List.List as="ol">
                                     <List.Item as='li'><Link to="/add-user">Add user</Link></List.Item>
-                                    <List.Item as='li'><Link to="/all-user">View all users</Link></List.Item>
+                                    <List.Item as='li'><Link to="/all-users">View all users</Link></List.Item>
                                 </List.List>
                             </List.Item>
 
