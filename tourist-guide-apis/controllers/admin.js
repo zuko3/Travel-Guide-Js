@@ -66,7 +66,7 @@ exports.updateAdmin = (req, res, next) => {
       adminuser.name = name;
     }
     if (password.trim() !== "") {
-      adminuser.password = password
+      adminuser.password = bcrypt.hashSync(password, 10);
     }
     if (email.trim() !== "") {
       adminuser.email = email;
