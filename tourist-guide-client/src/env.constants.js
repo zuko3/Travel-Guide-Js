@@ -9,5 +9,6 @@ export const apiUrls = {
     PLACE_TAGS_ALL: '/place/alltagsplace/',
     PLACE_POPULAR: '/place/popular/',
     LOGIN: '/user/login/',
-    PREFERENCE: '/place/prefrence/'
+    PREFERENCE: '/place/prefrence/',
+    ADD_USER: '/user/add-user',
 }
