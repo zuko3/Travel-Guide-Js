@@ -9,8 +9,9 @@ function formatTag(options) {
 }
 
 export function TagsInput(props) {
-    const [selectedOption, setSelectedOption] = useState([]);
+    const [selectedOption, setSelectedOption] = useState(props.selectedOption || []);
     const options = formatTag(props.options || []);
+
     function handleChange(selectedOption) {
         const { field: { name }, form: { setFieldValue } } = props;
         setSelectedOption(selectedOption || []);
