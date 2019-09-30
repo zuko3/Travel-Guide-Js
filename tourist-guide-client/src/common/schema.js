@@ -15,7 +15,7 @@ export const addUserSchema = Yup.object().shape({
     password: Yup.string()
         .min(6, 'Password is too short - should be 6 chars minimum.')
         .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
-        .required('No password provided.'),
+        .required('Required'),
     tags: Yup.array().min(1, 'Required'),
     email: Yup.string().email().required('Required')
 })
