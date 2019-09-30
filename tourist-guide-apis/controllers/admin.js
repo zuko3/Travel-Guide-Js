@@ -212,6 +212,12 @@ exports.updateUser = (req, res, next) => {
         user.tags = tags;
         user.save();
         return res.status(200).json({
+          user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            tags: user.tags
+          },
           message: "profile successfully updated"
         });
       } else {
@@ -226,6 +232,12 @@ exports.updateUser = (req, res, next) => {
           user.email = email;
           user.save();
           return res.status(200).json({
+            user: {
+              id: user._id,
+              name: user.name,
+              email: user.email,
+              tags: user.tags
+            },
             message: "profile successfully updated"
           });
         }).catch(err => {
@@ -254,6 +266,12 @@ exports.updateUser = (req, res, next) => {
         user.password = bcrypt.hashSync(password, 10);
         user.save();
         return res.status(200).json({
+          user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            tags: user.tags
+          },
           message: "profile successfully updated"
         });
       } else {
@@ -269,6 +287,12 @@ exports.updateUser = (req, res, next) => {
           user.password = bcrypt.hashSync(password, 10);
           user.save();
           return res.status(200).json({
+            user: {
+              id: user._id,
+              name: user.name,
+              email: user.email,
+              tags: user.tags
+            },
             message: "profile successfully updated"
           });
         }).catch(err => {
