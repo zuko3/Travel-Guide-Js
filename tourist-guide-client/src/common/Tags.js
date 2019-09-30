@@ -3,10 +3,11 @@ import { envConstants, apiUrls } from "../env.constants";
 import { Loader, Error, None } from "../common";
 import { Link } from 'react-router-dom';
 
-export function Tags() {
+export function Tags(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [tags, setTags] = useState([])
+    const [tags, setTags] = useState([]);
+    const { setListTags } = props;
 
     useEffect(() => {
         const tagsUrls = `${envConstants.BASE_URL}${apiUrls.TAGS_URL}`;
@@ -23,6 +24,7 @@ export function Tags() {
             setIsError(false);
             setIsLoading(false);
             setTags(response);
+            setListTags(response);
         }).catch(err => {
             setIsError(true);
             setIsLoading(false);

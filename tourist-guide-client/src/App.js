@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppRoutes, history, ProfileContainer } from "./common"
 import { Header, Tags, PopularPost, AuthForm, Footer } from "./common"
 import { Router, Route } from 'react-router-dom';
@@ -24,6 +24,7 @@ function mapStateToProps(state) {
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(function (props) {
   const { authData, setLoginData, setLogout } = props;
+  const [tags, setTags] = useState([])
   return (
     <Router history={history}>
       <div className="w3-content" style={{ maxWidth: "1400px" }}>
@@ -33,8 +34,8 @@ export const App = connect(mapStateToProps, mapDispatchToProps)(function (props)
             <AppRoutes authData={authData} />
           </div>
           <div className="w3-col l4">
-            {authData ? <ProfileContainer authData={authData} setLogout={setLogout} /> : <AuthForm setLoginData={setLoginData} />}
-            <Tags />
+            {authData ? <ProfileContainer authData={authData} setLogout={setLogout} /> : <AuthForm tags={tags} setLoginData={setLoginData} />}
+            <Tags setListTags={setTags} />
             <PopularPost />
           </div>
         </div>

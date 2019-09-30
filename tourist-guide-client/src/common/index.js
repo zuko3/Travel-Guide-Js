@@ -12,3 +12,4 @@ export * from "./schema";
 export * from "./store";
 export * from "./ProfileContainer";
 export * from "./Footer";
+export * from "./TagsInput";
