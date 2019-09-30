@@ -11,4 +11,5 @@ export const apiUrls = {
     LOGIN: '/user/login/',
     PREFERENCE: '/place/prefrence/',
     ADD_USER: '/user/add-user',
+    EDIT_USER: '/user/edit-user'
 }
