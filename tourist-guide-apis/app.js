@@ -49,7 +49,7 @@ app.use("/user", userRoutes);
 
 
 
-mongoose.connect("mongodb+srv://zuko3:python123@node-rest-shop-8c04h.mongodb.net/test?retryWrites=true")
+mongoose.connect("mongodbatlas_url")
   .then(result => { console.log("Database server stared ...."); })
   .catch(err => {
     console.log("[Error]:", err);
